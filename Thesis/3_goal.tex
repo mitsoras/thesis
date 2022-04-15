@@ -1,0 +1,14 @@
+\section{Goal of Thesis}
+\label{sec:goal}
+In the proposed thesis, I provide my research results on hardware implementations of encoders for the two cases described above: QC LDPC codes with no specific structure (other than QC) in the parity check matrix and the packet level erasure codes defined in \cite{CCSDS131.5}.
+Regarding bit-level LDPC codes, my work introduces a novel solution, optimized for the codes of \cite{CCSDS131.0}, the most important feature of which is the efficient bit vector multiplication with dense matrices. Such multiplications are key operations for all LDPC encoding methods. This solution enables the design of novel encoder architectures and the resulting hardware implementations can achieve throughput performance in the range of multiple Gbps, with low resource utilisation. A lot of discussion is taking place lately about the endorsement of the rate $1/2$ LDPC codes of \cite{CCSDS131.0} into the new optical space communication standards \cite{CCSDS141}. The required performance however of the LDPC encoding and decoding components of the codec remains a challenging task and an active research area.\par
+At the same time, the current work is the first approach to examine packet-level encoding algorithms and propose, implement and test hardware encoder architectures for these algorithms. Since their introduction in \cite{CCSDS131.5}, the proposed codes have not matured into a CCSDS recommended ("blue") standard yet. With the current research, I support that they can be placed among the options for modern high speed communications.\par
+The theoretical results and analytical estimations are in all cases backed by active development and implementations on FPGA and MPSoC hardware, which also include validation and verification procedures: the proposed architectures are implemented as IP cores on the targeted platforms and their responses are compared against a bit-accurate software model, written in C or GNU/Octave. This development and testing process accounts for a significant part of the total research effort and calls for solid understanding and proficient use of the corresponding tools:
+\begin{itemize}
+    \item Xilinx Vivado
+    \item Mentor Graphins Modelsim simulator
+    \item Synopsis Synplify
+    \item Vunit framework \cite{Vunit21}
+    \item GNU/Octave language, which is the open-source equivalent of Mathworks Matlab
+\end{itemize}
+The DSCAL equipment available to support the research includes all the above listed software and a variety of development boards, including the XUPv5, Zedboard, ZC706 and ZCU102 boards.
